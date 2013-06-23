@@ -3,8 +3,8 @@
 	public partial class PsnApi
 	{
 		/// <summary>
-		/// Get an individual game for an individual user.
-		/// <seealso cref="GetTrophies"/>
+		///		Get an individual game for an individual user.
+		///		<para>Use <see cref="GetTrophies(string, string)"/> for pulling just trophy data.</para>
 		/// </summary>
 		/// <param name="psnId">Id of the user to query.</param>
 		/// <param name="gameId">Id of the game to query.</param>

@@ -9,8 +9,8 @@ namespace PsnApiArWrapper
 	public partial class PsnApi
 	{
 		/// <summary>
-		/// Get trophies for a particular game for an individual user.
-		/// <seealso cref="GetGame"/>
+		///		Get trophies for a particular game for an individual user.
+		///		<para>Use <see cref="GetGame(string, string)"/> for pulling trophies and game information.</para>
 		/// </summary>
 		/// <param name="psnId">Id of the user to query.</param>
 		/// <param name="gameId">Id of the game to get trophies for.</param>
