@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ApiRequest.cs" />
     <Compile Include="Games.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsnApi.cs" />
   </ItemGroup>
