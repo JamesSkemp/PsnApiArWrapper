@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PsnApiArWrapper
+﻿namespace PsnApiArWrapper
 {
 	/// <summary>
 	/// Functionality to connect to the psnapi.com.ar API.
 	/// </summary>
 	public partial class PsnApi
 	{
+		#region
+		/// <summary>
+		/// Base URL of the API, ready for String.Format (passing method then query parameters).
+		/// </summary>
+		private const string apiUrl = "http://www.psnapi.com.ar/ps3/api/psn.asmx/{0}?{1}";
+		#endregion
 		/// <summary>
 		/// Timeout (in milliseconds) to use when making a request.
 		/// </summary>
