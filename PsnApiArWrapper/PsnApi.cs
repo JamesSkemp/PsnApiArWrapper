@@ -1,4 +1,5 @@
-﻿namespace PsnApiArWrapper
+﻿using System.Xml.Linq;
+namespace PsnApiArWrapper
 {
 	/// <summary>
 	/// Functionality to connect to the psnapi.com.ar API.
@@ -10,6 +11,10 @@
 		/// Base URL of the API, ready for String.Format (passing method then query parameters).
 		/// </summary>
 		private const string apiUrl = "http://www.psnapi.com.ar/ps3/api/psn.asmx/{0}?{1}";
+		/// <summary>
+		/// Namespace of the API, for use when parsing XML returned by it.
+		/// </summary>
+		private XNamespace apiNs = "http://www.psnapi.com.ar/ps3/api";
 		#endregion
 		/// <summary>
 		/// Timeout (in milliseconds) to use when making a request.
