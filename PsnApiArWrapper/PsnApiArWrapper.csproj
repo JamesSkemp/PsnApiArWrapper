@@ -45,6 +45,7 @@
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsnApi.cs" />
+    <Compile Include="PullUserData.cs" />
     <Compile Include="Trophies.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
