@@ -46,7 +46,7 @@ namespace PsnApiArWrapper
 				var profilePath = string.Format(filePath, "profile");
 				if (dataRequest.BackupFiles && File.Exists(profilePath))
 				{
-					File.Copy(profilePath, "__" + profilePath + "." + currentTime + ".xml");
+					File.Copy(profilePath, Path.Combine(outputDirectory, "__" + string.Format(dataRequest.FileNameFormat, "profile") + "." + currentTime + ".xml"));
 				}
 				XDocument.Parse(this.GetProfile(dataRequest.PsnId)).Save(profilePath);
 				Thread.Sleep(pauseDelay);
@@ -56,7 +56,7 @@ namespace PsnApiArWrapper
 			{
 				if (dataRequest.BackupFiles && File.Exists(gamesPath))
 				{
-					File.Copy(gamesPath, "__" + gamesPath + "." + currentTime + ".xml");
+					File.Copy(gamesPath, Path.Combine(outputDirectory, "__" + string.Format(dataRequest.FileNameFormat, "games") + "." + currentTime + ".xml"));
 				}
 				XDocument.Parse(this.GetGames(dataRequest.PsnId)).Save(gamesPath);
 				Thread.Sleep(pauseDelay);
@@ -75,7 +75,7 @@ namespace PsnApiArWrapper
 						var gamePath = string.Format(filePath, "game-" + gameId);
 						if (dataRequest.BackupFiles && File.Exists(gamePath))
 						{
-							File.Copy(gamePath, "__" + gamePath + "." + currentTime + ".xml");
+							File.Copy(gamePath, Path.Combine(outputDirectory, "__" + string.Format(dataRequest.FileNameFormat, "game-" + gameId) + "." + currentTime + ".xml"));
 						}
 						XDocument.Parse(this.GetGame(dataRequest.PsnId, gameId)).Save(gamePath);
 						Thread.Sleep(pauseDelay);
@@ -96,7 +96,7 @@ namespace PsnApiArWrapper
 						var gamePath = string.Format(filePath, "trophies-" + gameId);
 						if (dataRequest.BackupFiles && File.Exists(gamePath))
 						{
-							File.Copy(gamePath, "__" + gamePath + "." + currentTime + ".xml");
+							File.Copy(gamePath, Path.Combine(outputDirectory, "__" + string.Format(dataRequest.FileNameFormat, "trophies-" + gameId) + "." + currentTime + ".xml"));
 						}
 						XDocument.Parse(this.GetTrophies(dataRequest.PsnId, gameId)).Save(gamePath);
 						Thread.Sleep(pauseDelay);
