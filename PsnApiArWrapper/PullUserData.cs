@@ -66,9 +66,9 @@ namespace PsnApiArWrapper
 					// Requesting very specific games.
 					foreach (var gameId in dataRequest.GameIds)
 					{
-						var gamePath = string.Format(filePath, "game-" + gameId);
-						dataRequest.PerformBackup("game-" + gameId, "__{0}-" + currentTime);
-						XDocument.Parse(this.GetGame(dataRequest.PsnId, gameId)).Save(gamePath);
+						var gamePath = string.Format(filePath, "trophies-" + gameId);
+						dataRequest.PerformBackup("trophies-" + gameId, "__{0}-" + currentTime);
+						XDocument.Parse(this.GetTrophies(dataRequest.PsnId, gameId)).Save(gamePath);
 						Thread.Sleep(pauseDelay);
 					}
 				}
